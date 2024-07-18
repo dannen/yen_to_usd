@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "Yen Converter",
+    "version": "1.0",
+    "description": "Convert yen to USD on jauce.com",
+    "icons": {
+      "48": "icons/yen_icon.png"
+    },
+    "permissions": [
+      "https://api.exchangerate-api.com/",
+      "tabs",
+      "http://*.jauce.com/*",
+      "https://*.jauce.com/*"
+    ],
+    "background": {
+      "scripts": ["background.js"]
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*.jauce.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "browser_action": {
+      "default_icon": "icons/yen_icon.png"
+    }
+  }
+  

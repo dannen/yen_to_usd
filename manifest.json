@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "name": "Yen to USD Converter",
+    "version": "1.0",
+    "description": "Converts Yen to USD on the fly.",
+    "browser_action": {
+      "default_icon": "icons/yen_icon.png"
+    },
+    "icons": {
+      "48": "icons/yen_icon.png"
+    },
+    "permissions": [
+      "activeTab",
+      "storage",
+      "webNavigation"
+    ],
+    "background": {
+      "scripts": ["background.js"]
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
